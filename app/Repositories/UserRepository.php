@@ -17,7 +17,7 @@ class UserRepository implements UserInterface
     public function getAllUsers()
     {
         try {
-            $users = User::all();
+            $users = User::usersDesc()->get();
             return $this->success("All Users", $users);
         } catch(\Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
