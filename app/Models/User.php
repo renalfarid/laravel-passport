@@ -48,4 +48,8 @@ class User extends Authenticatable
     public function scopeUsersDesc($query){
         return $query->orderBy('id', 'DESC');
     }
+
+    public function scopeUserById($query, $id){
+        return $query->where('id', $id);
+    }
 }

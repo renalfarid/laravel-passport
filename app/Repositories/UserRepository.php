@@ -27,7 +27,7 @@ class UserRepository implements UserInterface
     public function getUserById($id)
     {
         try {
-            $user = User::find($id);
+            $user = User::userById($id)->get();
             
             // Check the user
             if(!$user) return $this->error("No user with ID $id", 404);
